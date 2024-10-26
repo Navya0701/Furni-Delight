@@ -1,0 +1,279 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>IKEA Furniture</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003b46;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .cart {
+            position: absolute;
+            top: 15px;
+            right: 15px; /* Change to right for top right corner */
+            background-color: #0072ce;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #00aaff;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            list-style: none;
+        }
+
+        nav ul li ul li a {
+            color: black;
+            display: block;
+            padding: 10px;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ddd;
+        }
+
+        .hero {
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+        }
+
+        .product-gallery {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-item {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product-img {
+            width: 200px;
+            height: auto;
+        }
+
+        .action-buttons button {
+            background-color: #007bff; /* Blue background */
+            color: white; /* White text */
+            border: none; /* Remove default border */
+            padding: 10px 15px; /* Add some padding */
+            margin: 5px; /* Space between buttons */
+            border-radius: 5px; /* Rounded corners */
+            cursor: pointer; /* Change cursor on hover */
+            transition: background-color 0.3s; /* Smooth transition */
+        }
+
+        .action-buttons button:hover {
+            background-color: #0056b3; /* Darker blue on hover */
+        }
+
+        footer {
+            background-color: #003b46;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>IKEA Furniture</h1>
+        <div class="cart" onclick="viewCart()">🛒 View Cart</div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Main</a></li>
+            <li>
+                <a href="#">IKEA</a>
+                <ul>
+                    <li><a href="#" onclick="showFurnitureSet('living-room')">Living Room Sets</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('bedroom')">Bedroom Furniture</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('dining')">Dining Tables</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('storage')">Storage Units</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <section class="hero" style="background-image: url('images/ikea-living-room.jpg');">
+        <div class="hero-text">
+            <h1>Welcome to IKEA</h1>
+            <p>Innovative Furniture for Your Home</p>
+        </div>
+    </section>
+
+    <main>
+        <section class="product-gallery">
+            <h2>Our IKEA Collection</h2>
+
+            <!-- Living Room Sets Category -->
+            <div id="living-room" class="furniture-set">
+                <div class="product-item">
+                    <img src="https://www.ikea.com/in/en/images/products/landskrona-3-seat-sofa-with-chaise-longue-gunnared-light-green-metal__0602391_pe680325_s5.jpg?f=xl" alt="IKEA Living Room Set" class="product-img">
+                    <p>IKEA Landskrona Sofa - Light Green</p>
+                    <p class="product-price">₹35,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Landskrona Sofa - Light Green')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Landskrona Sofa - Light Green')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://encrypted-tbn3.gstatic.com/shopping?q=tbn:ANd9GcSo2XZwjFZm9chqaaquEd54gY2VrCh6FQgRps8SyFv5y5k_Hgvr-6E2S6pbCHv6Z5WWieVVGGfLP3DuS0ptpvL7NUoVPiDVwBv6geKx_UoPTQx22IQHLxEq7-UXeOUz9Le5I0Yy0Pk&usqp=CAc">
+                    <p>IKEA Friheten Corner Sofa Bed - Dark Grey</p>
+                    <p class="product-price">₹28,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Friheten Corner Sofa Bed - Dark Grey')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Friheten Corner Sofa Bed - Dark Grey')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Bedroom Furniture Category -->
+            <div id="bedroom" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcT0gCNcVl4J7ePFvoLUyB__MDdn5OYbdEkWv9SXan8Dnhg_D_EUfBoIg7yde4c6L5UbS2MeHRXN5bmY3-isXZlsDdgMr9Xey97ZxueDCR8fPUx9ZL6MNa3kis1dDhPgj6WQ6Et-5_A&usqp=CAc">
+                    <p>IKEA Hemnes Bed Frame </p>
+                    <p class="product-price">₹50,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Hemnes Bed Frame - White')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Hemnes Bed Frame - White')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://www.ikea.com/in/en/images/products/malm-bed-frame-high-w-2-storage-boxes-black-brown-luroey__1101552_pe866728_s5.jpg?f=xl" alt="IKEA Malm Bed" class="product-img">
+                    <p>IKEA Malm Bed Frame - Black Brown</p>
+                    <p class="product-price">₹60,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Malm Bed Frame - Black Brown')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Malm Bed Frame - Black Brown')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Dining Tables Category -->
+            <div id="dining" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://www.ikea.com/in/en/images/products/vangsta-adde-table-and-6-chairs-white-white__1097908_pe865186_s5.jpg?f=xl" alt="IKEA Dining Table" class="product-img">
+                    <p>IKEA Vangsta Table - White</p>
+                    <p class="product-price">₹18,500</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Vangsta Table - White')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Vangsta Table - White')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://www.ikea.com/in/en/images/products/lisabo-table-and-4-chairs-ash-tallmyra-white-black__1255292_pe924486_s5.jpg?f=xl" alt="IKEA Lisabo Dining Table" class="product-img">
+                    <p>IKEA Lisabo Table - Ash Wood</p>
+                    <p class="product-price">₹22,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Lisabo Table - Ash Wood')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Lisabo Table - Ash Wood')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Storage Units Category -->
+            <div id="storage" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcTHsq0GHRxMfd50Hm7yOaeiDewVD2kzjEx2AVq9f-xdOD1RDGd7i0hl2QTsVsASQDxVFp8vn3aa2EMaXebhTQgY880oeGAamxAzhz_jHw4niSHpKVbYapkwNIUQpuLZq55j4c2ANA&usqp=CAc">
+                    <p>IKEA Hemnes Bookcase - Brown</p>
+                    <p class="product-price">₹15,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Hemnes Bookcase - White')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Hemnes Bookcase - White')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="data:image/webp;base64,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">
+                    <p>IKEA Kallax Shelving Unit </p>
+                    <p class="product-price">₹12,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('IKEA Kallax Shelving Unit - White')">Add to Cart</button>
+                        <button onclick="buyNow('IKEA Kallax Shelving Unit - White')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 IKEA Furniture. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Functions to show furniture sets
+        function showFurnitureSet(set) {
+            const sets = document.querySelectorAll('.furniture-set');
+            sets.forEach(furnitureSet => furnitureSet.style.display = 'none');
+            document.getElementById(set).style.display = 'block';
+        }
+
+        // Add to Cart function
+        function addToCart(itemName) {
+            alert(itemName + " has been added to your cart.");
+        }
+
+        // Buy Now function
+        function buyNow(itemName) {
+            alert("Redirecting to payment page for " + itemName);
+        }
+    </script>
+
+</body>
+</html>
