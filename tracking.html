@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Tracking</title>
+    <link rel="stylesheet" href="style.css"> <!-- Link to your CSS file -->
+</head>
+<body>
+    <header>
+        <h1>Track Your Order</h1>
+    </header>
+    
+    <main>
+        <form id="trackingForm">
+            <label for="trackingNumber">Enter your tracking number:</label>
+            <input type="text" id="trackingNumber" name="trackingNumber" required>
+            <button type="submit">Track</button>
+        </form>
+        <nav>
+            <a href="index.html">Home</a>
+            <a href="tracking.html">Track Your Order</a> <!-- New tracking page link -->
+        </nav>
+
+        <div id="trackingResult"></div> <!-- This will show tracking info -->
+    </main>
+
+    <script src="script.js"></script> <!-- Link to your JS file -->
+</body>
+</html>
