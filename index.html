@@ -1,0 +1,220 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <title>Furni Delight - E-Commerce</title>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <style>
+        /* Basic styles for demonstration */
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        body {
+            font-family: 'Roboto', sans-serif;
+            background-color: #fafafa;
+            color: #262626;
+        }
+
+        /* Instagram gradient colors */
+        .insta-gradient {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        /* Header */
+        header {
+            background-color: #fff;
+            padding: 20px 0;
+            text-align: center;
+            border-bottom: 1px solid #dbdbdb;
+            position: relative;
+        }
+
+        header h2 {
+            font-family: 'Lobster', cursive;
+            font-size: 45px;
+            letter-spacing: 2px;
+            color: #262626;
+        }
+
+        header .icons {
+            position: absolute;
+            right: 20px;
+            top: 20px;
+        }
+
+        header .icons a {
+            margin-left: 15px;
+            text-decoration: none;
+            color: #262626;
+        }
+
+        header .icons a:hover {
+            opacity: 0.7;
+        }
+
+        /* Navigation */
+        nav {
+            background-color: #fff;
+            padding: 10px 0;
+            text-align: center;
+            border-bottom: 1px solid #dbdbdb;
+        }
+
+        nav ul {
+            list-style-type: none;
+            padding: 0;
+            margin: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            margin-right: 25px;
+        }
+
+        nav ul li a {
+            text-decoration: none;
+            color: #262626;
+            font-size: 18px;
+            padding: 10px 20px;
+            border-radius: 5px;
+            transition: background-color 0.3s;
+            font-weight: 500;
+        }
+
+        nav ul li a:hover {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            color: white;
+        }
+
+        /* Home Page Content */
+        .home-info {
+            padding: 40px 20px;
+            text-align: center;
+            background-color: #fff;
+            margin: 20px;
+            box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
+            border-radius: 10px;
+        }
+
+        .home-info h2 {
+            font-size: 36px;
+            margin-bottom: 20px;
+            color: #262626;
+        }
+
+        .home-info p {
+            font-size: 18px;
+            color: #8e8e8e;
+            line-height: 1.6;
+        }
+
+        /* Footer */
+        footer {
+            background: linear-gradient(45deg, #f09433 0%, #e6683c 25%, #dc2743 50%, #cc2366 75%, #bc1888 100%);
+            padding: 20px;
+            text-align: center;
+            color: white;
+            font-size: 16px;
+        }
+
+        footer h6 {
+            font-size: 20px;
+            margin-bottom: 10px;
+        }
+
+        footer p {
+            margin: 10px 0;
+        }
+
+        footer img {
+            vertical-align: middle;
+            margin: 0 5px;
+        }
+
+        footer a {
+            margin: 0 10px;
+            text-decoration: none;
+        }
+
+        footer a img {
+            filter: brightness(0) invert(1);
+            transition: filter 0.3s;
+        }
+
+        footer a:hover img {
+            filter: brightness(0.8) invert(0.9);
+        }
+
+        /* Add Instagram-style font */
+        @import url('https://fonts.googleapis.com/css2?family=Lobster&family=Roboto:wght@400;500&display=swap');
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <h2>Furni Delight</h2>
+        <div class="icons">
+            <a href="#cart"><img src="https://cdn-icons-png.flaticon.com/128/16784/16784324.png" height="30px"
+                    alt="Cart"></a>
+            <a href="search.html"><img src="https://cdn-icons-png.flaticon.com/128/655/655625.png" height="30px"
+                    alt="Search"></a>
+            <a href="cart.html" class="cart-link">🛒 View Cart (<span id="cart-count">0</span>)</a>
+
+        </div>
+
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="steelcase.html">Steelcase</a></li>
+            <li><a href="ikea.html">IKEA</a></li>
+            <li><a href="pepperfry.html">Pepperfry</a></li>
+            <li><a href="search.html">Search Products</a></li>
+        </ul>
+    </nav>
+    <nav>
+        <a href="tracking.html">Track Your Order</a> <!-- New tracking page link -->
+    </nav>
+    
+
+    <!-- Home Page Content -->
+    <div class="home-info">
+        <h2>Furni Delight: Where Craft Meets Comfort</h2>
+        <p style="background-image: url('C:\Users\HP\Downloads\blue-relax-room-decor-luxury.jpg');"> <!-- Replace with your image URL -->
+            <p><span class="highlight">Explore</span> a curated collection of modern, classic, and custom-designed
+                furniture pieces that speak to your unique taste.</p>
+            <p>From ergonomic workspaces to cozy living room essentials, our range at <span class="highlight">Furni
+                    Delight</span> promises to bring style and comfort to every corner of your home. <span
+                    class="highlight">Craftsmanship</span> is at the heart of every piece we offer.</p>
+            <p>Ready to transform your space? Start browsing now and don't miss out on our latest <span
+                    class="highlight">seasonal offers</span> and <span class="highlight">exclusive deals</span>.</p>
+        </p>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <h6>Furni Delight</h6>
+        <p>Follow me on social media for updates and more!</p>
+        <div class="contact-icons">
+            <a href="tel:+918978159201" title="Call Us">
+                <img src="https://cdn-icons-png.flaticon.com/128/483/483947.png" height="30px" alt="Phone">
+            </a>
+            <a href="mailto:info@furnidelight.com" title="Email Us">
+                <img src="https://cdn-icons-png.flaticon.com/128/2165/2165061.png" height="30px" alt="Email">
+            </a>
+            <a href="https://instagram.com" title="Follow on Instagram">
+                <img src="https://cdn-icons-png.flaticon.com/128/1384/1384063.png" height="30px" alt="Instagram">
+            </a>
+        </div>
+        <p>&copy; 2024 Furni Delight - All Rights Reserved.</p>
+    </footer>
+
+</body>
+
+</html>
