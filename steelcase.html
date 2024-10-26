@@ -1,0 +1,320 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Steelcase Office Furniture</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #003c71;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            position: relative;
+        }
+
+        .cart {
+            position: absolute;
+            top: 15px;
+            right: 15px; /* Change to right for top right corner */
+            background-color: #0072ce;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #0072ce;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            list-style: none;
+            min-width: 150px;
+        }
+
+        nav ul li ul li a {
+            color: black;
+            display: block;
+            padding: 10px;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ddd;
+        }
+
+        .hero {
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+            background-position: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+            margin: 0;
+        }
+
+        .hero-text p {
+            font-size: 24px;
+            margin: 10px 0 0;
+        }
+
+        .product-gallery {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-item {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product-img {
+            width: 200px;
+            height: auto;
+        }
+
+        .action-buttons {
+            margin-top: 10px;
+        }
+
+        .action-buttons button {
+            padding: 10px 15px;
+            margin: 5px;
+            border: none;
+            background-color: #0072ce;
+            color: white;
+            cursor: pointer;
+        }
+
+        .product-price {
+            font-weight: bold;
+            margin-top: 5px;
+        }
+
+        footer {
+            background-color: #003c71;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+
+        .delivery-address {
+            text-align: center;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Steelcase Office Furniture</h1>
+        <div class="cart" onclick="viewCart()">🛒 View Cart</div>
+    </header>
+
+    <nav>
+        <ul>
+            <li><a href="index.html">Main</a></li>
+            <li>
+                <a href="#">Steelcase</a>
+                <ul>
+                    <li><a href="#" onclick="showFurnitureSet('chairs')">Office Chairs</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('desks')">Desks</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('cabinets')">Filing Cabinets</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('workstations')">Workstations</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('images/steelcase-office.jpg');">
+            <div class="hero-text">
+                <h1>Welcome to Steelcase</h1>
+                <p>Innovative Solutions for Your Office</p>
+            </div>
+        </section>
+
+        <!-- Product Gallery Section -->
+        <section class="product-gallery">
+            <h2>Our Steelcase Office Collection</h2>
+
+            <!-- Office Chairs Category -->
+            <div id="chairs" class="furniture-set">
+                <div class="product-item">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcQqhkyZtjYgceDD6T4h0jGYXVdbKsiK31EL8KSDIbxh5BXRL6fdVOSU2lYo_BDLDX325PZaabl0sl8gEgB0eJKBhhpFDTlXLlkKnkjJn7gboSG0PAwtyTJbMg&usqp=CAE" alt="Steelcase Chair - Modern Ergonomics" class="product-img">
+                    <p>Steelcase Chair - Modern Ergonomics</p>
+                    <p class="product-price">₹15,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Chair - Modern Ergonomics')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Chair - Modern Ergonomics')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://encrypted-tbn2.gstatic.com/shopping?q=tbn:ANd9GcS8_L-ubVSQ-EbWWth3KucHzKtSOJLuuDm20WTI7ULhcXfsyShKxJmMqXs1Wnwimu7Bsy9bPboEHuHoOoEWHeG7oMVqj2RUXiz4BsLL0DA&usqp=CAE" alt="Steelcase Synk Chair" class="product-img">
+                    <p>Steelcase Synk Chair - Comfort Redefined</p>
+                    <p class="product-price">₹18,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Synk Chair - Comfort Redefined')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Synk Chair - Comfort Redefined')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Desks Category -->
+            <div id="desks" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcS7WF_SdLk_n2Kny4lCdoku33g9Tr1HAbbtYQ&s" alt="Steelcase Desk - Adjustable" class="product-img">
+                    <p>Steelcase Desk - Adjustable Height</p>
+                    <p class="product-price">₹22,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Desk - Adjustable Height')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Desk - Adjustable Height')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://images.steelcase.com/image/upload/t_medium/f_auto,q_auto/v1421772439/www.steelcase.com/14-00031921.jpg" alt="Steelcase Desk - Modern Workstation" class="product-img">
+                    <p>Steelcase Desk - Modern Workstation</p>
+                    <p class="product-price">₹25,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Desk - Modern Workstation')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Desk - Modern Workstation')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Filing Cabinets Category -->
+            <div id="cabinets" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://skmodernart.in/wp-content/uploads/2023/10/file-cabinet-8-scaled.jpg" alt="Steelcase Filing Cabinet - Sleek Design" class="product-img">
+                    <p>Steelcase Filing Cabinet - Sleek Design</p>
+                    <p class="product-price">₹12,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Filing Cabinet - Sleek Design')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Filing Cabinet - Sleek Design')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://festivalfurniture.com/wp-content/uploads/2021/11/SC-file-cabinets.jpg" alt="Steelcase Filing Cabinet - Professional Use" class="product-img">
+                    <p>Steelcase Filing Cabinet - Professional Use</p>
+                    <p class="product-price">₹14,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Filing Cabinet - Professional Use')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Filing Cabinet - Professional Use')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Workstations Category -->
+            <div id="workstations" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://images.steelcase.com/image/upload/c_fill,q_auto,f_auto,h_900,w_1600/v1521689062/www.steelcase.com/2018/03/22/18-0100531.jpg" alt="Steelcase Workstation - Collaborative Space" class="product-img">
+                    <p>Steelcase Workstation - Collaborative Space</p>
+                    <p class="product-price">₹35,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Workstation - Collaborative Space')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Workstation - Collaborative Space')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://images.steelcase.com/image/upload/c_fill,q_auto,f_auto,h_900,w_1600/v1709312733/23-0221760.jpg" alt="Steelcase Flexible Workstation" class="product-img">
+                    <p>Steelcase Flexible Workstation - Adaptable Layout</p>
+                    <p class="product-price">₹40,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Steelcase Flexible Workstation - Adaptable Layout')">Add to Cart</button>
+                        <button onclick="buyNow('Steelcase Flexible Workstation - Adaptable Layout')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Steelcase Furniture Store. All rights reserved.</p>
+    </footer>
+
+    <script>
+        let cart = [];
+        let deliveryAddress = '';
+
+        function addToCart(item) {
+            cart.push(item);
+            alert(item + ' has been added to your cart.');
+        }
+
+        function viewCart() {
+            if (cart.length === 0) {
+                alert("Your cart is empty.");
+            } else {
+                alert("Your cart: \n" + cart.join("\n"));
+            }
+        }
+
+        function buyNow(item) {
+            if (!deliveryAddress) {
+                deliveryAddress = prompt("Please enter your delivery address:");
+                if (!deliveryAddress) {
+                    alert("Delivery address is required to complete the purchase.");
+                    return;
+                }
+            }
+            alert("Thank you for purchasing " + item + ". It will be delivered to: " + deliveryAddress);
+        }
+
+        function showFurnitureSet(set) {
+            // Hide all furniture sets
+            const furnitureSets = document.querySelectorAll('.furniture-set');
+            furnitureSets.forEach((set) => {
+                set.style.display = 'none';
+            });
+
+            // Show the selected furniture set
+            document.getElementById(set).style.display = 'block';
+        }
+    </script>
+</body>
+</html>
