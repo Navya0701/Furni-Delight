@@ -1,0 +1,293 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Pepperfry Furniture</title>
+    <link rel="stylesheet" href="styles.css">
+    <style>
+        /* Basic Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+        }
+
+        header {
+            background-color: #3a3a3a;
+            color: white;
+            padding: 10px;
+            text-align: center;
+        }
+        .cart {
+            position: absolute;
+            top: 15px;
+            right: 15px; /* Change to right for top right corner */
+            background-color: #0072ce;
+            color: white;
+            padding: 10px;
+            border-radius: 5px;
+            cursor: pointer;
+        }
+
+        nav {
+            background-color: #4a4a4a;
+            padding: 10px;
+            text-align: center;
+        }
+
+        nav ul {
+            list-style-type: none;
+            margin: 0;
+            padding: 0;
+        }
+
+        nav ul li {
+            display: inline-block;
+            position: relative;
+        }
+
+        nav ul li a {
+            color: white;
+            padding: 10px 20px;
+            text-decoration: none;
+        }
+
+        nav ul li:hover ul {
+            display: block;
+        }
+
+        nav ul li ul {
+            display: none;
+            position: absolute;
+            background-color: white;
+            color: black;
+            padding: 10px;
+            list-style: none;
+        }
+
+        nav ul li ul li a {
+            color: black;
+            display: block;
+            padding: 10px;
+        }
+
+        nav ul li ul li a:hover {
+            background-color: #ddd;
+        }
+
+        .hero {
+            background-size: cover;
+            height: 400px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            color: white;
+            text-align: center;
+        }
+
+        .hero-text h1 {
+            font-size: 48px;
+        }
+
+        .product-gallery {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .product-item {
+            display: inline-block;
+            margin: 10px;
+            text-align: center;
+        }
+
+        .product-img {
+            width: 200px;
+            height: auto;
+        }
+
+        .product-price {
+            font-size: 20px;
+            margin: 5px 0;
+        }
+
+        .action-buttons {
+            margin-top: 10px;
+        }
+
+        .action-buttons button {
+            padding: 8px 12px;
+            margin: 5px;
+            border: none;
+            cursor: pointer;
+            background-color: #007bff;
+            color: white;
+            font-size: 14px;
+        }
+
+        .action-buttons button:hover {
+            background-color: #0056b3;
+        }
+
+        footer {
+            background-color: #3a3a3a;
+            color: white;
+            text-align: center;
+            padding: 10px;
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <h1>Steelcase Office Furniture</h1>
+        <div class="cart" onclick="viewCart()">🛒 View Cart</div>
+    </header>
+    <nav>
+        <ul>
+            <li><a href="index.html">Main</a></li> <!-- Link to the home page (main.html) -->
+            <li>
+                <a href="#">Pepperfry</a>
+                <ul>
+                    <li><a href="#" onclick="showFurnitureSet('sofas')">Sofas</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('beds')">Beds</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('wardrobes')">Wardrobes</a></li>
+                    <li><a href="#" onclick="showFurnitureSet('coffee-tables')">Coffee Tables</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    
+    <main>
+        <!-- Hero Section -->
+        <section class="hero" style="background-image: url('images/pepperfry-furniture.jpg');">
+            <div class="hero-text">
+                <h1>Welcome to Pepperfry</h1>
+                <p>Modern & Stylish Furniture Solutions</p>
+            </div>
+        </section>
+
+        <!-- Product Gallery Section -->
+        <section class="product-gallery">
+            <h2>Our Pepperfry Collection</h2>
+
+            <!-- Sofas Category -->
+            <div id="sofas" class="furniture-set">
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/b/i/494x544/bingo-fabric-lhs-6-seater-sectional-sofa-in-creamy-cashmere-colour-bingo-fabric-lhs-6-seater-section-fkngvx.jpg" alt="Pepperfry Sofa - Modern Design" class="product-img">
+                    <p>Pepperfry Sofa - Modern Design</p>
+                    <p class="product-price">₹30,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Sofa - Modern Design')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Sofa - Modern Design')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/b/a/494x544/baley-fabric-3-seater-sofa-in-lama-black-colour-baley-fabric-3-seater-sofa-in-lama-black-colour-quah6z.jpg" alt="Pepperfry Sofa - Fabric Comfort" class="product-img">
+                    <p>Pepperfry Sofa - Fabric Comfort</p>
+                    <p class="product-price">₹25,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Sofa - Fabric Comfort')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Sofa - Fabric Comfort')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Beds Category -->
+            <div id="beds" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/y/o/1600x1760/yokohama-queen-size-bed-in-planked-walnut-finish-with-hydraulic-storage---upholstered-headboard-stor-5mvtcc.jpg" alt="Pepperfry Bed - Walnut Finish" class="product-img">
+                    <p>Pepperfry Bed - Walnut Finish</p>
+                    <p class="product-price">₹35,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Bed - Walnut Finish')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Bed - Walnut Finish')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/m/a/1600x1760/maya-queen-size-bed-with-box-storage-in-vintage-sheesham-finish--maya-queen-size-bed-with-box-storag-tbmukb.jpg" alt="Pepperfry Queen Size Bed" class="product-img">
+                    <p>Pepperfry Queen Size Bed</p>
+                    <p class="product-price">₹40,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Queen Size Bed')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Queen Size Bed')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Wardrobes Category -->
+            <div id="wardrobes" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/k/i/1600x1760/kibo-2-door-wardrobe-in-columbia-walnut-finish-with-mirror---lock-kibo-2-door-wardrobe-in-columbia-w-dukbqj.jpg" alt="Pepperfry Wardrobe - 2 Door" class="product-img">
+                    <p>Pepperfry Wardrobe - 2 Door</p>
+                    <p class="product-price">₹20,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Wardrobe - 2 Door')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Wardrobe - 2 Door')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/k/i/1600x1760/kibo-3-door-wardrobe-in-columbia-walnut-finish-with-drawer---lock-kibo-3-door-wardrobe-in-columbia-w-s55nla.jpg" alt="Pepperfry Wardrobe - 3 Door" class="product-img">
+                    <p>Pepperfry Wardrobe - 3 Door</p>
+                    <p class="product-price">₹25,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Wardrobe - 3 Door')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Wardrobe - 3 Door')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Coffee Tables Category -->
+            <div id="coffee-tables" class="furniture-set" style="display:none;">
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/b/a/1600x1760/bacovia-solid-wood-coffee-table-in-natural-finish-bacovia-solid-wood-coffee-table-in-natural-finish-jjlkwd.jpg" alt="Pepperfry Coffee Table - Natural Finish" class="product-img">
+                    <p>Pepperfry Coffee Table - Natural Finish</p>
+                    <p class="product-price">₹15,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Coffee Table - Natural Finish')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Coffee Table - Natural Finish')">Buy Now</button>
+                    </div>
+                </div>
+                <div class="product-item">
+                    <img src="https://ii1.pepperfry.com/media/catalog/product/c/l/1600x1760/clark-coffee-table-with-storage-in-wenge-finish-clark-coffee-table-with-storage-in-wenge-finish-vqyqqy.jpg" alt="Pepperfry Coffee Table" class="product-img">
+                    <p>Pepperfry Coffee Table</p>
+                    <p class="product-price">₹12,000</p>
+                    <div class="action-buttons">
+                        <button onclick="addToCart('Pepperfry Coffee Table')">Add to Cart</button>
+                        <button onclick="buyNow('Pepperfry Coffee Table')">Buy Now</button>
+                    </div>
+                </div>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2024 Pepperfry Furniture. All rights reserved.</p>
+    </footer>
+
+    <script>
+        // Function to show selected furniture set
+        function showFurnitureSet(set) {
+            // Hide all sets
+            const sets = document.getElementsByClassName('furniture-set');
+            for (let i = 0; i < sets.length; i++) {
+                sets[i].style.display = 'none';
+            }
+            // Show the selected set
+            document.getElementById(set).style.display = 'block';
+        }
+
+        // Function to simulate adding to cart
+        function addToCart(item) {
+            alert(item + ' has been added to your cart.');
+        }
+
+        // Function to simulate buying an item
+        function buyNow(item) {
+            alert('You are about to purchase ' + item + '.');
+        }
+    </script>
+
+</body>
+</html>
